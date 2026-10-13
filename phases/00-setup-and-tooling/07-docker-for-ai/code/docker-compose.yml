@@ -2,14 +2,7 @@ services:
   ai-dev:
     build:
       context: .
-      dockerfile: Dockerfile
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+      dockerfile: Dockerfile.cpu
     volumes:
       - ../../../:/workspace
       - ~/models:/models
